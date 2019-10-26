@@ -1,6 +1,6 @@
-.. _Software-Installation_Note:
+.. _Note_Software-Installation:
 
-Software-Installation
+Note : Software-Installation
 ==============================
     
 .. toctree::

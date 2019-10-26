@@ -169,3 +169,4 @@ Install Notepad++
     You will see the output in Windows Command Prompt
         
     .. image:: ../blogstatic/install-python/notepadpp7.png
+    

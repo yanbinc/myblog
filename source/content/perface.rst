@@ -8,7 +8,7 @@ Preface
 Reference Book:
 -----------------------
     
-        .. [#ASIHSDD] Advanced Signal Integrity for High Speed Digital Design.  Stephen H.HALL & Howard L.Heck
-        .. [#RAED] Regression Analysis and Experiment Design. Shisong Mao.
+.. [#ASIHSDD] Advanced Signal Integrity for High Speed Digital Design.  Stephen H.HALL & Howard L.Heck
+.. [#RAED] Regression Analysis and Experiment Design. Shisong Mao.
     
     

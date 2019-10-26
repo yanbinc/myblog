@@ -1,6 +1,6 @@
-.. _RSM_Study_Note:
+.. _Note_RSM_Study:
 
-RSM Study Note
+Note : RSM_Study
 ==============================
     
 .. toctree::

@@ -3,15 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-yanbin's Signal Integrity Notebook
+yanbin's Study Notebook
 =======================================================
 
 .. toctree::
    :maxdepth: 2
    
-   
-   content/RSM_Study_Note
-   
-   content/Software-Installation_Note
-   
 
+   content/Note_Software-Installation
+   
+   content/Note_RSM_Study
+
+   content/Note_PSIJ_Study
