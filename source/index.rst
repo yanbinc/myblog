@@ -12,6 +12,6 @@ yanbin's Signal Integrity Notebook
    
    content/RSM_Study_Note
    
-
+   content/Software-Installation_Note
    
 
