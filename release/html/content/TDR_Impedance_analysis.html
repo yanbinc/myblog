@@ -1,0 +1,184 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>FAQ &#8212; step_by_step_understand_RSM 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p class="first"><strong>Which Python version should I use? 2.x or 3.x? 32bit or 64bit?</strong></p>
+<blockquote>
+<div><p>I suggest to use 2.7.x 32bit, because 3.x is not back compliance
+with 2.x. Many third-part libaray only support 2.x. 32bit is also
+recommended, becasue 32-bit program could also work on 64bit OS.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Which Python distribution should I use?</strong></p>
+<blockquote>
+<div><p>I suggest to use pythonxy(<a class="reference external" href="https://code.google.com/p/pythonxy/">https://code.google.com/p/pythonxy/</a>),
+which is a all in one package, including pyvisa, pyserial, wxpython,
+numpy, scipy, matplotlib etc. Just one click installation,
+I recommended full installation. Alterative way is install them one
+by one separately.</p>
+<p>python(x,y) is a free scientific and engineering development software
+for numerical computations, data analysis and data visualization
+based on Python programming language.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Which third-party libaray is necessary to install?</strong></p>
+<blockquote>
+<div><p>At least these packages are required:</p>
+<ul class="simple">
+<li>Pyvisa: python wrapper of visa32.dll, it is convinient for send
+SCPI command to remote control instrument. It support
+GPIB/USB/Serial etc.</li>
+<li>Pyserial: it is for Serial port commnuication to control non visa
+instrument like Iport, Temperature controller.</li>
+<li>wxPython: GUI toolkit.</li>
+</ul>
+<p>These packages are optional:</p>
+<ul class="simple">
+<li>Numpy/Scipy:can replace Matlab</li>
+<li>Matplotlib: can replace Matlab plot</li>
+<li>Others: xlrd/xlrd for Microsoft Excel read/write,
+PIL for image processing</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<ol class="arabic" start="4">
+<li><p class="first"><strong>Where could I find the documents ?</strong></p>
+<blockquote>
+<div><p>Search on google for offical document or find it locally
+C:\Program Files (x86)\pythonxy\doc if pythonxy have installed.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Why choose wxPython as GUI toolkit? How about PyQT?</strong></p>
+<blockquote>
+<div><p>PyQT is also good, but it is not free for comericial use,
+wxPython is OK. Python standard library have tcl/tk GUI but it is
+not powerful.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Compared to Labview, do I need change hardware?</strong></p>
+<blockquote>
+<div><p>No, same hardware, only difference is software.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Can I pack my python code into exe files?</strong></p>
+<blockquote>
+<div><p>Yes, use py2exe libaray. Plus, you can use Innostep pack it
+into windows installer.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Any IDE for Python?</strong></p>
+<blockquote>
+<div><p>Python source code is pure text, any editor could be used. VIM,
+Emacs, notepad++, etc.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Any coding style for Python</strong></p>
+<blockquote>
+<div><p>PEP 0008(<a class="reference external" href="http://legacy.python.org/dev/peps/pep-0008/">http://legacy.python.org/dev/peps/pep-0008/</a>) Style Guide
+for Python Code. One of import item is use 4 spaces per
+indentation level.</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">step_by_step_understand_RSM</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, yanbin chen.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/content/TDR_Impedance_analysis.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

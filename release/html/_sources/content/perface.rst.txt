@@ -1,0 +1,16 @@
+.. _preface:
+
+Preface
+=======
+
+This documents is a tutorial for beginner to understand RSM(response surface modeling).
+
+Step by step coding refers to **Advanced Signal integrity for high speed digital design**.
+
+Reference Book:
+-----------------------
+1. Advanced Signal integrity for high speed digital design.  Stephen H.HALL & Howard L.Heck
+2. JMP help.
+3. Regression analysis and experiment design. Shisong Mao.
+4. pyDOE document. https://pythonhosted.org/pyDOE/
+

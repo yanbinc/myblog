@@ -1,0 +1,14 @@
+Name,Function,Example
+change part,pause program,T1
+message,same as change part,
+set-dev.addr,set DUT slave I2C address ,0x60
+set-reg.val,set DUT register value,0x50=0x20
+delay,delay in seconds,5
+i2c-init,"run a I2C macro file, which serial port and file path need be configured in Main.py, only run when value is true(case insensitive)",TRUE
+set-volt,"change the power supply voltage, the power label mapping need be configured in Main.py","ps00 = 1.2, Model2400=1.3, U3606A=1.4"
+set-temp,"Set Temperature controller, the serial port need be configured in Main.py","25, 120,-30"
+set-clk,"set clock generator frequency, CG635,E4438C,DTG5078 and AWG7000 were supported","1E9, 3E8,stop,run"
+set-gpib,write a raw SCPI command via GIPB interface,GPIB0::20|Volt 1.5
+set-com,change the Iport serial port for I2C contro;,COM5
+run-i2cfile,run a I2C macro file based on value in current cell,D:\\yourpath\\some.txt
+meas,call the measurment plug in ,meas(BER)

@@ -1,0 +1,255 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Response Surface Modeling &#8212; RSM Cookbook 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Minimum Mean Square Error" href="MMSE.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="MMSE.html" title="Minimum Mean Square Error"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">RSM Cookbook 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="response-surface-modeling">
+<span id="rsm"></span><h1>Response Surface Modeling<a class="headerlink" href="#response-surface-modeling" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The response surface modeling (RSM) technique provides a tool that gives us the ability to model
+the behavior of our signaling system as the circuit and interconnect characteristics vary.
+RSM works by fitting a statistical model of the output response as a function of changes in the input variables. <a class="footnote-reference" href="#asihsdd" id="id1">[1]</a></p>
+<p>The general form of the response surface model is
+y is the system response. β is the model fit coefficients. x is the system input.</p>
+<img alt="../_images/rsm_input_output_equation.png" src="../_images/rsm_input_output_equation.png" />
+<p>It is highly flexible, allowing to fit curved response surface by using higher-order combinations of input variables.
+In general ,second-order models are sufficient for high-speed signaling links.</p>
+<img alt="../_images/rsm_input_output_2nd_equation.png" src="../_images/rsm_input_output_2nd_equation.png" />
+</div>
+<div class="section" id="rsm-procedure">
+<h2>RSM  Procedure<a class="headerlink" href="#rsm-procedure" title="Permalink to this headline">¶</a></h2>
+<p>Let’s understand this by using step by step coding.</p>
+<div class="section" id="after-finish-a-doe-simulation-we-will-get-an-input-and-output-table">
+<h3>After finish a Doe simulation . we will get an input and output table.<a class="headerlink" href="#after-finish-a-doe-simulation-we-will-get-an-input-and-output-table" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><img alt="../_images/doe_1.png" src="../_images/doe_1.png" />
+</div></blockquote>
+</div>
+<div class="section" id="generate-a-second-order-table-focus-on-eye-height-this-time">
+<h3>Generate a second-order table.(focus on eye-height this time)<a class="headerlink" href="#generate-a-second-order-table-focus-on-eye-height-this-time" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Input variable number is 12.[corner,cpu_pkg_z,cpu_pkg_len,brd_z,brd_ofld_len,dimm_z,dimm_len,
+dram_pkg_td,dram_pkg_z,dram_cdie,dram_tol0,dram_tol1]</p>
+<img alt="../_images/k.png" src="../_images/k.png" />
+<p>Then the amount of terms in 2nd-ord RSM model , k , is  91 (1+2*12+12*(12-1)/2=91)</p>
+<p>see the number and list</p>
+<img alt="../_images/doe_var.png" src="../_images/doe_var.png" />
+<p>check the corresponding value with input matrix.</p>
+<img alt="../_images/X_matrix.png" src="../_images/X_matrix.png" />
+</div></blockquote>
+</div>
+<div class="section" id="normalize-the-martix">
+<h3>Normalize the martix.<a class="headerlink" href="#normalize-the-martix" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Rather than use the raw data, regression tool usually fit the model to a transformed version of data.
+The purpose is to minimize the infulence of different term’s coefficient.
+Refernce Book <a class="footnote-reference" href="#asihsdd" id="id2">[1]</a> proposal an round normalization while I suggest to use legacy normalization.
+See following comparison.</p>
+<img alt="../_images/norm.png" src="../_images/norm.png" />
+<p>Which method is better? Let’s see the result in MMSE part.</p>
+</div></blockquote>
+</div>
+<div class="section" id="regression-analysis">
+<h3>Regression Analysis.<a class="headerlink" href="#regression-analysis" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>MMSE result</p>
+<img alt="../_images/mmse_result.png" src="../_images/mmse_result.png" />
+<p>Conclusion: The result shows normalized X is better than Round Normalized X in regression analysis.</p>
+<p>Why?</p>
+<p>Sometimes DOE table is not <strong>orthogonal array</strong>. Round Normalization introduce extra error.</p>
+</div></blockquote>
+</div>
+<div class="section" id="regression-result-criteria">
+<h3>Regression Result Criteria.<a class="headerlink" href="#regression-result-criteria" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Residuals vector / standard residual/R-square/R-square_adj/RMSE</p>
+<img alt="../_images/criteria_1.png" src="../_images/criteria_1.png" />
+<img alt="../_images/criteria_2.png" src="../_images/criteria_2.png" />
+<img alt="../_images/criteria_3.png" src="../_images/criteria_3.png" />
+</div></blockquote>
+</div>
+<div class="section" id="significant-test">
+<h3>Significant Test.<a class="headerlink" href="#significant-test" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Model significance : the F-Test</p>
+<img alt="../_images/F_test.png" src="../_images/F_test.png" />
+<p>Parameter significance : Individual t-Tests</p>
+<img alt="../_images/t_test.png" src="../_images/t_test.png" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">est_vari_model_err</span><span class="o">=</span><span class="n">SS_error</span><span class="o">/</span><span class="n">dF_error</span>
+<span class="n">SE_i</span><span class="o">=</span><span class="p">(</span><span class="n">est_vari_model_err</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">mat_X</span><span class="o">.</span><span class="n">T</span><span class="o">*</span><span class="n">mat_X</span><span class="p">)))</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="c1"># the standard error of regression</span>
+<span class="n">t_stat_i</span><span class="o">=</span><span class="n">B</span><span class="o">/</span><span class="n">SE_i</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">SE_i</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">t_stat_i</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/t_test2.png" src="../_images/t_test2.png" />
+<p>Accoring to Refernce Book <a class="footnote-reference" href="#asihsdd" id="id3">[1]</a> , ‘At a 95% confidence level, the critical value for the t-statistic is
+2.365 obtrained from Appendix D. Result of the hypothesis tests are listed in the rightmost column of the
+table ,which show that 11 of the 20 model terms are significant for eye width model.All other terms can be
+removed from the model without significant degradation in the model fit’</p>
+<img alt="../_images/summary_tf_test.png" src="../_images/summary_tf_test.png" />
+<p>My option is not good . Refernce Book <a class="footnote-reference" href="#mao" id="id4">[3]</a> propose to use stepwise for further optimization.</p>
+<p><strong>Stepwise is not considered in this document</strong>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="result-comparison-with-commerical-tool">
+<h3>Result comparison with commerical tool <a class="footnote-reference" href="#jmp" id="id5">[2]</a><a class="headerlink" href="#result-comparison-with-commerical-tool" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>JMP’s MMSE result .(RSM backward sim stepwise 1st time result with full parameter)</p>
+<img alt="../_images/jmp_1.png" src="../_images/jmp_1.png" />
+<img alt="../_images/jmp_2.png" src="../_images/jmp_2.png" />
+<p>Coefficients Comparison.</p>
+<img alt="../_images/jmp_3.png" src="../_images/jmp_3.png" />
+<p>Conclusion:</p>
+<p>Constant and 1st order item coefficient value show <strong>big difference</strong>.
+2nd order item coefficient value show <strong>good correlation</strong>.
+The output estimate by coefficient shows <strong>good correlation</strong>.  It’s weird.</p>
+<p>Why?</p>
+<p><strong>Different expression</strong></p>
+<p>Orginal JMP Equation</p>
+<img alt="../_images/jmp_math_1.png" src="../_images/jmp_math_1.png" />
+<p>Expand polynomial expressions in Mathematica</p>
+<img alt="../_images/jmp_math_2.png" src="../_images/jmp_math_2.png" />
+<p>After expand the equation,Correlate well.</p>
+<img alt="../_images/jmp_math_3.png" src="../_images/jmp_math_3.png" />
+<img alt="../_images/jmp_comparison_1.png" src="../_images/jmp_comparison_1.png" />
+</div></blockquote>
+</div>
+<div class="section" id="conclusion">
+<h3>Conclusion.<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Current code can correlate JMP stepwise 1st step well.</div></blockquote>
+</div>
+<div class="section" id="upm-analysis">
+<h3>UPM Analysis.<a class="headerlink" href="#upm-analysis" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Generate 1Million row variable table and get the output according to equation after stepwise.</p>
+<p>Sort the result to see the system’s performance. Eg.0.01% value.</p>
+</div></blockquote>
+<table class="docutils footnote" frame="void" id="asihsdd" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>, <a class="fn-backref" href="#id3">3</a>)</em> Advanced Signal integrity for high speed digital design.  Stephen H.HALL &amp; Howard L.Heck</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="jmp" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[2]</a></td><td>JMP help.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="mao" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[3]</a></td><td>Regression analysis and experiment design. Shisong Mao.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Response Surface Modeling</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#rsm-procedure">RSM  Procedure</a><ul>
+<li><a class="reference internal" href="#after-finish-a-doe-simulation-we-will-get-an-input-and-output-table">After finish a Doe simulation . we will get an input and output table.</a></li>
+<li><a class="reference internal" href="#generate-a-second-order-table-focus-on-eye-height-this-time">Generate a second-order table.(focus on eye-height this time)</a></li>
+<li><a class="reference internal" href="#normalize-the-martix">Normalize the martix.</a></li>
+<li><a class="reference internal" href="#regression-analysis">Regression Analysis.</a></li>
+<li><a class="reference internal" href="#regression-result-criteria">Regression Result Criteria.</a></li>
+<li><a class="reference internal" href="#significant-test">Significant Test.</a></li>
+<li><a class="reference internal" href="#result-comparison-with-commerical-tool">Result comparison with commerical tool </a></li>
+<li><a class="reference internal" href="#conclusion">Conclusion.</a></li>
+<li><a class="reference internal" href="#upm-analysis">UPM Analysis.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="MMSE.html"
+                        title="previous chapter">Minimum Mean Square Error</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/content/RSM.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="MMSE.html" title="Minimum Mean Square Error"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">RSM Cookbook 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Yanbin Chen.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
+    </div>
+  </body>
+</html>

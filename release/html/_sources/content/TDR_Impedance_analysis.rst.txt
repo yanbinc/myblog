@@ -1,0 +1,72 @@
+FAQ
+===
+
+
+#. **Which Python version should I use? 2.x or 3.x? 32bit or 64bit?**
+
+    I suggest to use 2.7.x 32bit, because 3.x is not back compliance
+    with 2.x. Many third-part libaray only support 2.x. 32bit is also 
+    recommended, becasue 32-bit program could also work on 64bit OS.
+
+#. **Which Python distribution should I use?**
+
+    I suggest to use pythonxy(https://code.google.com/p/pythonxy/), 
+    which is a all in one package, including pyvisa, pyserial, wxpython, 
+    numpy, scipy, matplotlib etc. Just one click installation, 
+    I recommended full installation. Alterative way is install them one
+    by one separately. 
+
+    python(x,y) is a free scientific and engineering development software 
+    for numerical computations, data analysis and data visualization 
+    based on Python programming language.
+
+#. **Which third-party libaray is necessary to install?**
+
+    At least these packages are required: 
+
+    - Pyvisa: python wrapper of visa32.dll, it is convinient for send 
+      SCPI command to remote control instrument. It support 
+      GPIB/USB/Serial etc.
+    - Pyserial: it is for Serial port commnuication to control non visa 
+      instrument like Iport, Temperature controller.
+    - wxPython: GUI toolkit.
+
+    These packages are optional:
+
+    - Numpy/Scipy:can replace Matlab
+    - Matplotlib: can replace Matlab plot
+    - Others: xlrd/xlrd for Microsoft Excel read/write, 
+      PIL for image processing
+
+4. **Where could I find the documents ?**
+
+    Search on google for offical document or find it locally
+    C:\\Program Files (x86)\\pythonxy\\doc if pythonxy have installed.
+
+5. **Why choose wxPython as GUI toolkit? How about PyQT?**
+
+    PyQT is also good, but it is not free for comericial use, 
+    wxPython is OK. Python standard library have tcl/tk GUI but it is 
+    not powerful.
+
+6. **Compared to Labview, do I need change hardware?**
+
+    No, same hardware, only difference is software.
+
+7. **Can I pack my python code into exe files?**
+
+    Yes, use py2exe libaray. Plus, you can use Innostep pack it 
+    into windows installer.
+
+8. **Any IDE for Python?**
+
+    Python source code is pure text, any editor could be used. VIM, 
+    Emacs, notepad++, etc.
+
+9. **Any coding style for Python**
+
+    PEP 0008(http://legacy.python.org/dev/peps/pep-0008/) Style Guide 
+    for Python Code. One of import item is use 4 spaces per 
+    indentation level.
+
+
