@@ -1,7 +1,7 @@
-.. _Preface:
+.. _rsm_Preface:
 
 Preface
-=======
+=========
     
     This Note is a step by step coding for understanding RSM(response surface modeling). [#ASIHSDD]_ [#RAED]_
     

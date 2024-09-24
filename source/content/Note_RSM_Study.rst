@@ -6,7 +6,7 @@ Note : RSM_Study
 .. toctree::
    :maxdepth: 2
    
-   perface
+   rsm_perface
    
    MMSE
    

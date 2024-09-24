@@ -8,10 +8,10 @@ yanbin's Study Notebook
 
 .. toctree::
    :maxdepth: 2
-   
 
-   content/Note_Software-Installation
    
    content/Note_RSM_Study
 
    content/Note_PSIJ_Study
+
+   content/Note_SMV_Study
