@@ -1,7 +1,10 @@
 .. _Note_SMV_Study:
 
-SMV Overview
+Note : SMV Study
 =====================
+
+SMV Overview
+------------------
     
     System Margin Validation(SMV) is a methodology for verifying the signal integrity
     of a circuit board and assessing how much margin is in the design relative to
@@ -22,7 +25,7 @@ SMV Overview
 
 
 SMV Measurement Requirement
-===================================
+----------------------------------
 
 .. csv-table:: SMV Measurement Items
    :header: "Type", "Item", "Description"
@@ -36,7 +39,7 @@ SMV Measurement Requirement
    "Guard-Band", "Padanoia", ""
 
 SMV Result Demo
-==================================
+--------------------------
 
     .. image:: ../blogstatic/SMV/upm_result_demo.png
 
