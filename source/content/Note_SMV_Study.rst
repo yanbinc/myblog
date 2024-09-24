@@ -58,7 +58,7 @@ SMV Result Demo
 Reference Book:
 -----------------------
     
-.. [#HMME] Determining How Much Electrical Margin is Enough to Ship a Product. Stephen Peters,David Shykind,et al,. DTTC 2025(Intel Internal Conference)
+.. [#HMME] Determining How Much Electrical Margin is Enough to Ship a Product. Stephen Peters,David Shykind,et al,. DTTC 2005(Intel Internal Conference)
 
     
     

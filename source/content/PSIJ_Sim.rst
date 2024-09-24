@@ -3,7 +3,7 @@
 Report of PSIJ Analysis
 ---------------------------------------------
 
-    .. image:: ../blogstatic/PSIJ/icon.jpg
+    .. image:: ../blogstatic/PSIJ/icon.JPG
     
     Current profile in time domain
     
