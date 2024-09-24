@@ -49,6 +49,9 @@ SMV Result Demo
 
 **The content of this table is fictitious and is for display only.**
 
+Based on this brief UPM table we can get that
+the DDR can reach 1dpc 4800 and 2dpc 4000 with mass production low risk.
+
     .. image:: ../blogstatic/SMV/upm_result_demo.png
 
 
