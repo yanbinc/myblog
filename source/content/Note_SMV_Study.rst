@@ -41,6 +41,8 @@ SMV Measurement Requirement
 SMV Result Demo
 --------------------------
 
+**The content of this table is fictitious and is for display only.**
+
     .. image:: ../blogstatic/SMV/upm_result_demo.png
 
 
