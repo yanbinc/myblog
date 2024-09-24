@@ -21,7 +21,7 @@ SMV Overview
     **TakeAway Points**
 
     One key question that needs to be answered before mass production of different
-    chips/IPs is how to infer mass production risks from laboratory small batch testing
+    chips/IPs is **how to infer mass production risks from laboratory small batch testing?**
 
 
 SMV Measurement Requirement
@@ -37,6 +37,12 @@ SMV Measurement Requirement
    "Guard-Band", "Impedance", "Impedance variation impact"
    "Guard-Band", "LBHR", "Low Temp boot High Temp Run"
    "Guard-Band", "Padanoia", ""
+
+SMV Detail and Coding
+------------------------------
+
+Pending...(Secret)
+
 
 SMV Result Demo
 --------------------------
