@@ -5,6 +5,8 @@ Release 0.3.2 (Set 28, 2024)
 
 * Add revision history
 
+* Fix typo in SMV
+
 
 Release 0.3.1 (Set 25, 2024)
 =================================
