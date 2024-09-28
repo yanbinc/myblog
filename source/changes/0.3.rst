@@ -1,0 +1,23 @@
+
+
+Release 0.3.2 (Set 28, 2024)
+=================================
+
+* Add revision history
+
+
+Release 0.3.1 (Set 25, 2024)
+=================================
+
+* Update SMV note
+
+* Update yaml for readthedoc
+
+
+Release 0.3.0 (Set 24, 2024)
+=================================
+
+* Remove python installation
+
+* Add SMV note
+

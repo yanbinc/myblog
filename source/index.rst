@@ -15,3 +15,12 @@ HeisenbergChen's Notebook
    content/Note_PSIJ_Study
 
    content/Note_SMV_Study
+
+Misc
+==========
+
+.. toctree::
+   :maxdepth: 2
+
+
+   changes/index
