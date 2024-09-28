@@ -1,6 +1,6 @@
 .. _Note_PSIJ_Study:
 
-Note : PSIJ Study
+Power Supply Induced Jitter
 ==============================
     
 .. toctree::

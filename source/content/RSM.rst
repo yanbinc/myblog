@@ -1,6 +1,6 @@
 .. _RSM:
 
-Response Surface Modeling 
+RSM Coding
 ==============================
     
     

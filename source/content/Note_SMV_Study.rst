@@ -1,7 +1,7 @@
 .. _Note_SMV_Study:
 
-Note : SMV Study
-=====================
+System Margin Validation
+=======================================
 
 SMV Overview
 ------------------

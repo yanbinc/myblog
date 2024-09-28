@@ -1,6 +1,6 @@
 .. _Note_RSM_Study:
 
-Note : RSM_Study
+Response Surface Modeling
 ==============================
     
 .. toctree::
