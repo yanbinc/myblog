@@ -16,6 +16,8 @@ Heisenberg's SI Coding Notebook
 
    content/Note_SMV_Study
 
+   .. content/PLL
+
 Misc
 ==========
 

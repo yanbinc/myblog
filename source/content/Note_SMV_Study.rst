@@ -11,15 +11,27 @@ SMV Overview
     silicon characteristic and processes that vary over time,including voltage,
     frequency,humidity and component aging,among other factors. [#HMME]_
 
+    From system designer’s point of view, it is vital to test the robustness of the
+    memory system in the EV (Electric Validation) phase of the design cycle.
+    To achieve the goal, Intel not only asks designers to conduct “system test” by
+    running test tools but also provides the “Intel Rank Margining Tool (RMT)” to
+    help designer to understand how much eye height and eye width “margin” exist
+    before the memory system run into issue. Since a severe low margin usually leads
+    to a respin of the mainboard, both test and debug activities are critical to ensure
+    the quality of the system design.In this paper, a systematic and scientific debug methodology
+    is proposed and demonstrated to debug the low margin scenario. [#DDMBDQ]_
+
+    简略归纳:
+
     由于成本限制，量产前的实验室单个接口shmoo测试的芯片/单板往往不超过25pcs（5pcs/corner），
 
-    基于测试需要判断量产的风险
+    在TR4需要基于小批量测试结果分析并判断高速IO量产的风险。如果能以UPM数值来回答那就更佳。
 
     Unit Per Million(UPM) 指百万个系统里面的故障数。(一般intel的标准是UPM50)
 
     **核心要点**
 
-    回答了如何基于实验室小批量测试来**数值化**外推量产风险，而不是单薄的低/中低/中/高风险。
+    该方法论可以回答如何基于实验室小批量测试来**数值化**外推量产风险，而不是单薄的低/中低/中/高风险。
 
 
 SMV 测试分类
@@ -77,5 +89,6 @@ Reference Book:
     
 .. [#HMME] Determining How Much Electrical Margin is Enough to Ship a Product. Stephen Peters,David Shykind,et al,. DTTC 2005(Intel Internal Conference)
 
-    
+.. [#DDMBDQ] DDR Debug Methodology for Board Design Quality and System Robustness. Thonas Su, Zoe Liu, Jimmy Hsu, Denis Chen, Paul Chen,et al,. IMPACT 17th 2022
+
     
